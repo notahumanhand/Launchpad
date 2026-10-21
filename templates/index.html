@@ -3,66 +3,77 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f7f9">
-  <title>Applications | Launchpad</title>
+  <meta name="theme-color" content="#f7f8fa">
+  <meta name="description" content="A portfolio of software projects demonstrating full-stack development, data applications, workflow automation, and applied AI.">
+  <title>Software Engineering Portfolio | Projects</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
   <main class="shell">
     <header class="topbar">
-      <a class="wordmark" href="/" aria-label="Launchpad home">
-        <span class="mark" aria-hidden="true">L</span>
-        <span>Launchpad</span>
+      <a class="wordmark" href="/" aria-label="Portfolio home">
+        <span class="mark" aria-hidden="true">P</span>
+        <span>Software Projects</span>
       </a>
-      <span class="topbar-note">PERSONAL APPLICATIONS</span>
+      <a class="top-link" href="#projects">Explore projects <span aria-hidden="true">↓</span></a>
     </header>
 
     <section class="hero">
-      <p class="eyebrow">YOUR WORKSPACE</p>
-      <h1>Applications, in one place.</h1>
-      <p class="intro">The launchpad checks each application and starts any Render service that has gone idle. You can open a site as soon as it is responding.</p>
-      <div class="hero-actions">
-        <button id="wake-all" class="button button-primary" type="button">
-          <span class="button-icon" aria-hidden="true">↻</span>
-          Wake all applications
-        </button>
-        <span id="overall-status" class="overall-status" aria-live="polite">Preparing checks…</span>
+      <p class="eyebrow">SOFTWARE ENGINEERING PORTFOLIO</p>
+      <h1>Projects built to solve different kinds of problems.</h1>
+      <p class="intro">This portfolio brings together three independent applications spanning workflow automation, analytics, and healthcare data validation. Explore each project to see its purpose, technical approach, and working demonstration.</p>
+      <div class="hero-meta">
+        <span><span class="meta-dot"></span>Live hosted demonstrations</span>
+        <span>Python · Web applications · Data workflows · Applied AI</span>
       </div>
     </section>
 
-    <section class="applications-section" aria-labelledby="apps-heading">
+    <section id="projects" class="projects-section" aria-labelledby="projects-heading">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">APPLICATION DIRECTORY</p>
-          <h2 id="apps-heading">Your applications</h2>
+          <p class="eyebrow">SELECTED PROJECTS</p>
+          <h2 id="projects-heading">Explore the work</h2>
+          <p class="section-intro">Choose a project to view its demonstration. The status indicator shows whether the hosted service has responded to a readiness check.</p>
         </div>
-        <span id="last-checked" class="last-checked">Status updates automatically</span>
+        <button id="wake-all" class="button button-primary" type="button">
+          <span class="button-icon" aria-hidden="true">↻</span>
+          Check all projects
+        </button>
       </div>
 
-      <div id="application-grid" class="application-grid">
-        <article class="app-card skeleton-card">
-          <div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line long"></div>
-        </article>
-        <article class="app-card skeleton-card">
-          <div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line long"></div>
-        </article>
-        <article class="app-card skeleton-card">
-          <div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line long"></div>
-        </article>
+      <p id="overall-status" class="overall-status" aria-live="polite">Preparing project checks…</p>
+
+      <div id="application-grid" class="project-grid">
+        <article class="project-card skeleton-card"><div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line long"></div></article>
+        <article class="project-card skeleton-card"><div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line long"></div></article>
+        <article class="project-card skeleton-card"><div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line long"></div></article>
+      </div>
+      <p id="last-checked" class="last-checked">Status updates automatically</p>
+    </section>
+
+    <section class="capabilities" aria-labelledby="capabilities-heading">
+      <p class="eyebrow">AREAS OF FOCUS</p>
+      <h2 id="capabilities-heading">What these projects demonstrate</h2>
+      <div class="capability-grid">
+        <article class="capability"><span class="capability-number">01</span><h3>End-to-end web development</h3><p>Building user-facing applications with backend logic, data handling, and interactive interfaces.</p></article>
+        <article class="capability"><span class="capability-number">02</span><h3>Data modeling and analysis</h3><p>Structuring information so users can explore records, apply filters, and trace summary metrics to source data.</p></article>
+        <article class="capability"><span class="capability-number">03</span><h3>Workflow and validation</h3><p>Turning multi-step review tasks into explicit processes with comparison logic and human-readable findings.</p></article>
+        <article class="capability"><span class="capability-number">04</span><h3>Practical AI integration</h3><p>Using AI-assisted extraction as one part of a larger workflow, with deterministic checks and human review where appropriate.</p></article>
       </div>
     </section>
 
-    <section class="note-panel">
-      <div class="note-mark" aria-hidden="true">i</div>
+    <section class="transparency" aria-label="Demonstration notes">
+      <div class="transparency-mark" aria-hidden="true">i</div>
       <div>
-        <h3>About startup times</h3>
-        <p>Render's free services may sleep after inactivity. Their first request can take around a minute while they start. This page stays responsive while each application is checked independently.</p>
+        <h2>About these demonstrations</h2>
+        <p>These are independent projects hosted on Render. Free-tier services may sleep after inactivity, so the first request can take around a minute while a service starts. This page checks each service in the background and updates its status separately.</p>
+        <p>CaseFlow and VeriFHIR are proof-of-concept demonstrations; Commonthread uses synthetic fundraising data. Their demonstrations are intended to show technical approaches, not to represent production legal, clinical, or institutional systems.</p>
       </div>
     </section>
 
     <footer class="footer">
-      <span>Independent projects. One starting point.</span>
-      <span>Launchpad · Render</span>
+      <span>Thank you for taking the time to review these projects.</span>
+      <span>Project portfolio · Live demonstrations</span>
     </footer>
   </main>
   <script src="{{ url_for('static', filename='js/dashboard.js') }}" defer></script>

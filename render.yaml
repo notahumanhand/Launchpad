@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: portfolio-launchpad
+    runtime: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --workers 2 --threads 4 --timeout 180
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: CASEFLOW_URL
+        value: https://konaredemo.onrender.com
+      - key: COMMONTHREAD_URL
+        value: https://commonthread-xrub.onrender.com
+      - key: VERIFHIR_URL
+        value: https://verifhir-s05f.onrender.com

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f7f9">
+  <title>Applications | Launchpad</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="wordmark" href="/" aria-label="Launchpad home">
+        <span class="mark" aria-hidden="true">L</span>
+        <span>Launchpad</span>
+      </a>
+      <span class="topbar-note">PERSONAL APPLICATIONS</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">YOUR WORKSPACE</p>
+      <h1>Applications, in one place.</h1>
+      <p class="intro">The launchpad checks each application and starts any Render service that has gone idle. You can open a site as soon as it is responding.</p>
+      <div class="hero-actions">
+        <button id="wake-all" class="button button-primary" type="button">
+          <span class="button-icon" aria-hidden="true">↻</span>
+          Wake all applications
+        </button>
+        <span id="overall-status" class="overall-status" aria-live="polite">Preparing checks…</span>
+      </div>
+    </section>
+
+    <section class="applications-section" aria-labelledby="apps-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">APPLICATION DIRECTORY</p>
+          <h2 id="apps-heading">Your applications</h2>
+        </div>
+        <span id="last-checked" class="last-checked">Status updates automatically</span>
+      </div>
+
+      <div id="application-grid" class="application-grid">
+        <article class="app-card skeleton-card">
+          <div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line long"></div>
+        </article>
+        <article class="app-card skeleton-card">
+          <div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line long"></div>
+        </article>
+        <article class="app-card skeleton-card">
+          <div class="skeleton-line short"></div><div class="skeleton-line"></div><div class="skeleton-line long"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="note-panel">
+      <div class="note-mark" aria-hidden="true">i</div>
+      <div>
+        <h3>About startup times</h3>
+        <p>Render's free services may sleep after inactivity. Their first request can take around a minute while they start. This page stays responsive while each application is checked independently.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Independent projects. One starting point.</span>
+      <span>Launchpad · Render</span>
+    </footer>
+  </main>
+  <script src="{{ url_for('static', filename='js/dashboard.js') }}" defer></script>
+</body>
+</html>
